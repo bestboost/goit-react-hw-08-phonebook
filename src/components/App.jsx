@@ -1,41 +1,24 @@
 import { Box } from '../components/Box';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from '../redux/operations';
-import { Tiltle, Contacts } from './App.styled';
-import Phonebook from 'components/Phonebook/Phonebook';
-import Forms from 'components/Form/Form';
-import Filter from './Filter/Filter';
-import { selectIsLoading, selectError } from '../redux/selectors';
+import { lazy, Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import SharedLayout from './sharedLayout/SharedLayout';
+
+const Register = lazy(() => import('../pages/Register'));
+const Login = lazy(() => import('../pages/Login'));
+const Contacts = lazy(() => import('../pages/Contacts'));
 
 const App = () => {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
   return (
-    <Box
-      style={{
-        height: '100vh',
-        display: 'block',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-        paddingLeft: 40,
-      }}
-    >
-      <Tiltle>Phonebook</Tiltle>
-      <Forms />
-      {error && <p>Something goes wrong, try again</p>}
-      <Contacts>Contacts</Contacts>
-      {isLoading && !error && <p>Request in progress...</p>}
-      <Filter />
-      <Phonebook />
+    <Box>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<SharedLayout />}>
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/contacts" element={<Contacts />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </Box>
   );
 };
