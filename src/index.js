@@ -11,11 +11,11 @@ import App from 'components/App';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <BrowserRouter basename="/goit-react-hw-08-phonebook">
-        <Provider store={store}>
+      <Provider store={store}>
+        <BrowserRouter basename="/goit-react-hw-08-phonebook">
           <App />
-        </Provider>
-      </BrowserRouter>
+        </BrowserRouter>
+      </Provider>
     </ThemeProvider>
   </React.StrictMode>
 );

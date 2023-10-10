@@ -1,8 +1,8 @@
 import React from 'react';
 import { TypeName, InputName, FilterBox } from './Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFilters } from '../../redux/selectors';
-import { filterContact } from '../../redux/contactSlice';
+import { selectFilters } from '../../redux/contacts/selectors';
+import { filterContact } from '../../redux/contacts/contactSlice';
 
 const Filter = () => {
   const dispatch = useDispatch();
