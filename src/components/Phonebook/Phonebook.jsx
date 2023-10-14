@@ -26,7 +26,7 @@ const Phonebook = () => {
             <ContactItem key={contact.id}>
               <Point></Point>
               <ContactName>
-                {contact.name}: {contact.phone}
+                {contact.name}: {contact.number}
               </ContactName>
               <DeleteButton onClick={() => deleteContactBtn(contact.id)}>
                 Delete

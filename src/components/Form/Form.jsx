@@ -23,7 +23,7 @@ const Forms = () => {
         addContact(value);
         break;
 
-      case 'phone':
+      case 'number':
         addContact(value);
         break;
 
@@ -38,19 +38,20 @@ const Forms = () => {
 
     const contact = {
       name: form.elements.name.value,
-      phone: form.elements.phone.value,
+      number: form.elements.number.value,
     };
 
-    if (
-      contacts.find(
-        prevContact =>
-          prevContact.name.toLowerCase() === contact.name.toLowerCase()
-      )
-    ) {
-      alert(contact.name + ' is already in contacts');
-      form.reset();
-      return;
-    }
+    // if (
+    //   contacts === [] &&
+    //   contacts.find(
+    //     prevContact =>
+    //       prevContact.name.toLowerCase() === contact.name.toLowerCase()
+    //   )
+    // ) {
+    //   alert(contact.name + ' is already in contacts');
+    //   form.reset();
+    //   return;
+    // }
 
     dispatch(addContact(contact));
     form.reset();
@@ -69,7 +70,7 @@ const Forms = () => {
       <TypePhone>Phone number</TypePhone>
       <InputPhone
         type="tel"
-        name="phone"
+        name="number"
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
         onChange={handelChange}
