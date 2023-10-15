@@ -5,8 +5,7 @@ export const Form = styled.form`
   flex-direction: column;
   aline-items: flex-start;
   width: 450px;
-  margin: ${p => p.theme.space[3]}px;
-  margin-bottom: ${p => p.theme.space[4]}px;
+  margin: ${p => p.theme.space[4]}px;
   padding: ${p => p.theme.space[4]}px;
 
   border: ${p => p.theme.border.normal};

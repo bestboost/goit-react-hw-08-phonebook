@@ -23,7 +23,7 @@ export const Nav = styled('nav')`
 `;
 
 export const Tiltle = styled.h1`
-  margin: ${p => p.theme.space[3]}px;
+  margin: ${p => p.theme.space[4]}px;
   color: ${p => p.theme.colors.title};
   font-size: ${p => p.theme.fontSizes.xl}px;
 `;

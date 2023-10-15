@@ -35,6 +35,6 @@ export const theme = {
   },
 
   shadows: {
-    profile: '0 0 2px 1px #dcdcde',
+    profile: '0 0 2px 1px rgba(0, 0, 255, 0.2)',
   },
 };
