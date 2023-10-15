@@ -41,17 +41,16 @@ const Forms = () => {
       number: form.elements.number.value,
     };
 
-    // if (
-    //   contacts === [] &&
-    //   contacts.find(
-    //     prevContact =>
-    //       prevContact.name.toLowerCase() === contact.name.toLowerCase()
-    //   )
-    // ) {
-    //   alert(contact.name + ' is already in contacts');
-    //   form.reset();
-    //   return;
-    // }
+    if (
+      contacts.find(
+        prevContact =>
+          prevContact.name.toLowerCase() === contact.name.toLowerCase()
+      )
+    ) {
+      alert(contact.name + ' is already in contacts');
+      form.reset();
+      return;
+    }
 
     dispatch(addContact(contact));
     form.reset();
