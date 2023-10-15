@@ -5,7 +5,7 @@ export const theme = {
     background: '#ffffff',
     hover: '#64baf3c7',
     border: '#dcdcde',
-    action: '#f8d7fd',
+    action: 'rgba(0, 0, 255, 0.5)',
   },
 
   fonts: {
@@ -35,6 +35,6 @@ export const theme = {
   },
 
   shadows: {
-    profile: '0 0 2px 1px rgba(0, 0, 255, 0.2)',
+    profile: '0 0 2px 1px rgba(0, 0, 255, 0.3)',
   },
 };
