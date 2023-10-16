@@ -9,7 +9,7 @@ export const Box = styled.div`
 `;
 
 export const User = styled.p`
-  margin: ${p => p.theme.space[2]}px;
+  margin: ${p => p.theme.space[3]}px;
   color: ${p => p.theme.colors.text};
   font-size: ${p => p.theme.fontSizes.m}px;
 `;
@@ -17,12 +17,12 @@ export const User = styled.p`
 export const LogButton = styled.button`
   cursor: pointer;
   margin: ${p => p.theme.space[0]}px;
-  padding: ${p => p.theme.space[2]}px;
+  padding-left: ${p => p.theme.space[4]}px;
+  padding-right: ${p => p.theme.space[4]}px;
   font-size: ${p => p.theme.fontSizes.m}px;
   color: ${p => p.theme.colors.text};
   background-color: ${p => p.theme.colors.background};
-  border: ${p => p.theme.border.normal};
-  border-color: ${p => p.theme.colors.border};
+  border: unset;
   border-radius: ${p => p.theme.radii.normal};
   box-shadow: ${p => p.theme.shadows.profile};
 

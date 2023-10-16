@@ -32,8 +32,7 @@ export const DeleteButton = styled.button`
   font-size: ${p => p.theme.fontSizes.m}px;
   color: ${p => p.theme.colors.text};
   background-color: ${p => p.theme.colors.background};
-  border: ${p => p.theme.border.normal};
-  border-color: ${p => p.theme.colors.border};
+  border: unset;
   border-radius: ${p => p.theme.radii.normal};
   box-shadow: ${p => p.theme.shadows.profile};
 
