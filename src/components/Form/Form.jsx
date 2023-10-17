@@ -10,6 +10,7 @@ import {
   AddButton,
 } from './Form.styled';
 import { selectContacts } from '../../redux/contacts/selectors';
+import toast from 'react-hot-toast';
 
 const Forms = () => {
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ const Forms = () => {
       name: form.elements.name.value,
       number: form.elements.number.value,
     };
+    const notify = () => toast(contact.name + ' is already in contacts');
 
     if (
       contacts.find(
@@ -47,7 +49,7 @@ const Forms = () => {
           prevContact.name.toLowerCase() === contact.name.toLowerCase()
       )
     ) {
-      alert(contact.name + ' is already in contacts');
+      notify();
       form.reset();
       return;
     }
