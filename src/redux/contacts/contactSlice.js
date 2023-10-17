@@ -6,6 +6,7 @@ const userContactInitialState = {
     items: [],
     isLoading: false,
     error: null,
+    btnDisable: true,
   },
   filters: '',
 };

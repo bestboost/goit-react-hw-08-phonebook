@@ -8,6 +8,8 @@ export const selectError = state => state.userContact.contacts.error;
 
 export const selectFilters = state => state.userContact.filters;
 
+export const selectBtn = state => state.userContact.contacts.btnDisable;
+
 export const selectVisibleContacts = createSelector(
   [selectContacts, selectFilters],
   (contacts, filters) => {
